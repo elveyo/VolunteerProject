@@ -34,6 +34,7 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // rtbText
@@ -48,13 +49,13 @@
             // 
             button1.BackColor = SystemColors.ActiveCaption;
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(641, 296);
+            button1.Location = new Point(485, 296);
             button1.Name = "button1";
             button1.Size = new Size(124, 41);
             button1.TabIndex = 2;
             button1.Text = "Kreiraj fajl";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += btnCreateFile_Click;
             // 
             // label1
             // 
@@ -74,18 +75,30 @@
             label2.TabIndex = 4;
             label2.Text = "Prevuci fajl sa satnicom ovdje.";
             // 
+            // button2
+            // 
+            button2.BackColor = Color.LightGray;
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(641, 296);
+            button2.Name = "button2";
+            button2.Size = new Size(124, 41);
+            button2.TabIndex = 5;
+            button2.Text = "Pošalji mail";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += showMailForm_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 357);
+            Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(rtbText);
-            Name = "Form1";
+            Name = "Main Form";
             Text = "Volonterski izvještaj";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,5 +110,6 @@
         private Button button1;
         private Label label1;
         private Label label2;
+        private Button button2;
     }
 }

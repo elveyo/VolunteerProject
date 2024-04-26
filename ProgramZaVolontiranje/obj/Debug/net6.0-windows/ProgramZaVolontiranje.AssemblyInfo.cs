@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProgramZaVolontiranje")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c44dd7de7b0c6ed1d18e08405e9a8d1aa1e5fe61")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProgramZaVolontiranje")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProgramZaVolontiranje")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

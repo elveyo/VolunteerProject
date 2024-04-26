@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elvir\\Desktop\\Projects\\ProgramZaVolontiranje\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj": {}
+    "C:\\Users\\Elvir\\Documents\\GitHub\\VolunteerProject\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elvir\\Desktop\\Projects\\ProgramZaVolontiranje\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj": {
+    "C:\\Users\\Elvir\\Documents\\GitHub\\VolunteerProject\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elvir\\Desktop\\Projects\\ProgramZaVolontiranje\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj",
+        "projectUniqueName": "C:\\Users\\Elvir\\Documents\\GitHub\\VolunteerProject\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj",
         "projectName": "ProgramZaVolontiranje",
-        "projectPath": "C:\\Users\\Elvir\\Desktop\\Projects\\ProgramZaVolontiranje\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj",
+        "projectPath": "C:\\Users\\Elvir\\Documents\\GitHub\\VolunteerProject\\ProgramZaVolontiranje\\ProgramZaVolontiranje.csproj",
         "packagesPath": "C:\\Users\\Elvir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvir\\Desktop\\Projects\\ProgramZaVolontiranje\\ProgramZaVolontiranje\\obj\\",
+        "outputPath": "C:\\Users\\Elvir\\Documents\\GitHub\\VolunteerProject\\ProgramZaVolontiranje\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "PDFsharp": {
               "target": "Package",
               "version": "[6.0.0, )"

@@ -2,6 +2,7 @@
 
 namespace ProgramZaVolontiranje
 {
+    using DotNetEnv;
     using Microsoft.Office.Interop.Word;
     using PdfSharp.Pdf;
     using PdfSharp.Pdf.IO;
@@ -10,7 +11,8 @@ namespace ProgramZaVolontiranje
     public partial class Form1 : Form
     {
 
-        private string draggedFilePath;
+        private string? draggedFilePath;
+        private string? finalFilePath;
         public Form1()
         {
             InitializeComponent();
@@ -35,62 +37,70 @@ namespace ProgramZaVolontiranje
             foreach (string file in files)
             {
                 if (file.EndsWith(".pdf")) draggedFilePath = file;
-                  
-            }
-            }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            }
+            MessageBox.Show("Fajl je prenesen!");
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCreateFile_Click(object sender, EventArgs e)
         {
-            string filePath = "C:\\Users\\Elvir\\Desktop\\Osnovni_Formular.docx";
+            if (string.IsNullOrEmpty(draggedFilePath))
+            {
+                MessageBox.Show("Prije kreiranja finalnog fajla prevucite vaše satnice.");
+                return;
+            }
+            //defaultni formular
+            string mainFilePath = "C:\\Users\\Elvir\\Desktop\\Osnovni_Formular.docx";
             Application wordApp = new Application();
             wordApp.DisplayAlerts = WdAlertLevel.wdAlertsNone;
-            //defaultni formular
-            Document doc = wordApp.Documents.Open(filePath);
+            Document doc = wordApp.Documents.Open(mainFilePath);
+
             //pravim kopiju;
-            string desktopPutanja = "C:\\Users\\Elvir\\Desktop";
-            string kopijaPutanja = Path.Combine(desktopPutanja, $"Volonterski_Izvještaj_{DateTime.Now.Month}_{DateTime.Now.Year}.docx");
-            doc.SaveAs2(kopijaPutanja);
+            string desktop = "C:\\Users\\Elvir\\Desktop";
+            string copy = Path.Combine(desktop, $"Volonterski_Izvještaj_{DateTime.Now.Month}_{DateTime.Now.Year}.docx");
+            doc.SaveAs2(copy);
             doc.Close();
 
             //otvaranje kopije na kojoj cemo raditi
-            Document izvjestaj = wordApp.Documents.Open(kopijaPutanja);
-
-            //postavljanje podataka
-            Paragraph last = izvjestaj.Paragraphs[4];
-            Paragraph opis = izvjestaj.Paragraphs[29];
-            Paragraph datumDole = izvjestaj.Paragraphs[izvjestaj.Paragraphs.Count - 1];
-
-            last.Range.Delete();
-            last.Range.Text = $"Datum: {DateTime.Now.ToString("d.M.yyyy")}\n\n";
-            opis.Range.Delete();
-            opis.Range.Text = rtbText.Text;
-            opis.Range.Bold = 0;
-            datumDole.Range.Delete();
-            datumDole.Range.Text = $"Datum: {DateTime.Now.ToString("d.M.yyyy")}\n\n";
-
-
-            //spremamo promjene
+            Document izvjestaj = wordApp.Documents.Open(copy);
+            fillDataIntoFile(izvjestaj);
             izvjestaj.Save();
+
             //prije zatvaranja fajla, konvertujemo .docx fajl u .pdf fajl
-            string pdfPutanja = Path.ChangeExtension(kopijaPutanja, "pdf");
+            string pdfPutanja = Path.ChangeExtension(copy, "pdf");
             izvjestaj.ExportAsFixedFormat(pdfPutanja, WdExportFormat.wdExportFormatPDF);
-            
+
             //mergamo dva pdf-a
             MergePDFs(draggedFilePath, pdfPutanja);
 
-            //sada zatvaramo sve
+            //sada zatvaramo sve te brisemo fajl jer nam vise ne treba
             izvjestaj.Close();
+            File.Delete(copy);
             wordApp.Quit();
 
+            //finalna poruka
             MessageBox.Show("Fajl je spremljen na desktop!");
             rtbText.Clear();
+
+        }
+
+        private void fillDataIntoFile(Document file)
+        { 
+            //postavljanje podataka
+            Paragraph last = file.Paragraphs[4];
+            Paragraph info = file.Paragraphs[29];
+            Paragraph dateParagraph = file.Paragraphs[file.Paragraphs.Count - 1];
+            string date = $"Datum: {DateTime.Now.ToString("d.M.yyyy")}\n\n";
+
+            last.Range.Delete();
+            last.Range.Text = date;
+            info.Range.Delete();
+            info.Range.Text = rtbText.Text;
+            info.Range.Bold = 0;
+            dateParagraph.Range.Delete();
+            dateParagraph.Range.Text = date;
 
         }
 
@@ -101,7 +111,8 @@ namespace ProgramZaVolontiranje
 
             PdfDocument mergedPDF = new PdfDocument();
 
-            foreach (PdfPage page in pdf1.Pages) {
+            foreach (PdfPage page in pdf1.Pages)
+            {
                 mergedPDF.AddPage(page);
             }
             foreach (PdfPage page in pdf2.Pages)
@@ -109,9 +120,22 @@ namespace ProgramZaVolontiranje
                 mergedPDF.AddPage(page);
             }
 
-            string filePath = "C:\\Users\\Elvir\\Desktop\\ElvirPeder.pdf";
+            string filePath = $"C:\\Users\\Elvir\\Desktop\\Volonterski_Izvještaj_{DateTime.Now.Month}_{DateTime.Now.Year}.pdf";
             mergedPDF.Save(filePath);
+            mergedPDF.Close();
+            finalFilePath = filePath;
+         
 
+        }
+
+        private void showMailForm_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(finalFilePath))
+            {
+                MessageBox.Show("Niste kreirali mjesecni izvještaj!");
+                return;
+            }
+            new MailForm(finalFilePath).ShowDialog();
         }
     }
 }
