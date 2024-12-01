@@ -52,13 +52,13 @@ namespace ProgramZaVolontiranje
                 return;
             }
             //defaultni formular
-            string mainFilePath = "C:\\Users\\Elvir\\Desktop\\Osnovni_Formular.docx";
+            string mainFilePath = "C:\\Users\\Elvir Agic\\Desktop\\Osnovni_Formular.docx";
             Application wordApp = new Application();
             wordApp.DisplayAlerts = WdAlertLevel.wdAlertsNone;
             Document doc = wordApp.Documents.Open(mainFilePath);
 
             //pravim kopiju;
-            string desktop = "C:\\Users\\Elvir\\Desktop";
+            string desktop = "C:\\Users\\Elvir Agic\\Desktop";
             string copy = Path.Combine(desktop, $"Volonterski_Izvještaj_{DateTime.Now.Month}_{DateTime.Now.Year}.docx");
             doc.SaveAs2(copy);
             doc.Close();
@@ -93,7 +93,11 @@ namespace ProgramZaVolontiranje
             Paragraph info = file.Paragraphs[29];
             Paragraph dateParagraph = file.Paragraphs[file.Paragraphs.Count - 1];
             string date = $"Datum: {DateTime.Now.ToString("d.M.yyyy")}\n\n";
+            if(DateTime.Now.Day< 5)
+            {
+                 date = $"Datum: 30.{DateTime.Now.Month-1}.{DateTime.Now.Year}\n\n";
 
+            }
             last.Range.Delete();
             last.Range.Text = date;
             info.Range.Delete();
@@ -120,7 +124,7 @@ namespace ProgramZaVolontiranje
                 mergedPDF.AddPage(page);
             }
 
-            string filePath = $"C:\\Users\\Elvir\\Desktop\\Volonterski_Izvještaj_{DateTime.Now.Month}_{DateTime.Now.Year}.pdf";
+            string filePath = $"C:\\Users\\Elvir Agic\\Desktop\\Volonterski_Izvještaj_{DateTime.Now.Month}_{DateTime.Now.Year}.pdf";
             mergedPDF.Save(filePath);
             mergedPDF.Close();
             finalFilePath = filePath;

@@ -45,6 +45,18 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MailForm.cs",
@@ -57,18 +69,6 @@
               "WhenOpened": "2024-04-24T04:55:47.998Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             },
             {
               "$type": "Document",
@@ -91,7 +91,7 @@
               "RelativeDocumentMoniker": "ProgramZaVolontiranje\\Form1.cs",
               "ToolTip": "C:\\Users\\Elvir Agic\\Documents\\GitHub\\VolunteerProject\\ProgramZaVolontiranje\\Form1.cs",
               "RelativeToolTip": "ProgramZaVolontiranje\\Form1.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAUwGEAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAUwGEAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T18:33:08.338Z",
               "EditorCaption": ""

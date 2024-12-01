@@ -1,0 +1,10 @@
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.csproj.AssemblyReference.cache
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.csproj.ResolveComReference.cache
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.Form1.resources
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.MailForm.resources
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.csproj.GenerateResource.cache
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.AssemblyInfoInputs.cache
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.AssemblyInfo.cs
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.csproj.CoreCompileInputs.cache
+C:\Users\Elvir Agic\Documents\GitHub\VolunteerProject\ProgramZaVolontiranje\obj\Debug\net8.0-windows\ProgramZaVolontiranje.sourcelink.json
